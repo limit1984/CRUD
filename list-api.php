@@ -4,7 +4,7 @@ $perPage = 5; // 一頁有幾筆
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
 // 算總筆數
-$t_sql = "SELECT COUNT(1) FROM address_book ";
+$t_sql = "SELECT COUNT(1) FROM shop ";
 $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 
 $totalPages = ceil($totalRows / $perPage);
@@ -22,7 +22,7 @@ if ($totalRows) {
     }
 
     $sql = sprintf(
-        "SELECT * FROM address_book ORDER BY sid DESC LIMIT %s, %s",
+        "SELECT * FROM shop ORDER BY sid DESC LIMIT %s, %s",
         ($page - 1) * $perPage,
         $perPage
     );

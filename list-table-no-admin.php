@@ -5,14 +5,14 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">姓名</th>
-                    <th scope="col">手機</th>
+                    <th scope="col">電話</th>
             </thead>
             <tbody>
                 <?php foreach ($rows as $r) : ?>
                     <tr>
                         <td><?= $r['sid'] ?></td>
                         <td><?= $r['name'] ?></td>
-                        <td><?= $r['mobile'] ?></td>
+                        <td><?= $r['phone'] ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
