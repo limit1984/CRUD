@@ -20,21 +20,12 @@ if (empty($_POST['name'])) {
 
 // TODO: 檢查欄位資料
 
-$sql = "UPDATE `restaurants` SET 
+$sql = "UPDATE `address_book` SET 
 `name`=?,
-`account`=?,
-`password`=?,
-`address`=?,
-`phone`=?,
-`food_type_sid`=?,
-`bus_day`=?,
-`bus_start`=?,
-`bus_end`=?,
-`rest_right`=?,
-`plat_right`=?,
-`src`=?,
-`pay`=?,
-`side`=? 
+`email`=?,
+`mobile`=?,
+`birthday`=?,
+`address`=? 
 WHERE sid=?";
 // WHERE前面不能加東西!
 
@@ -66,5 +57,3 @@ if ($stmt->rowCount()) {
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
-
-if_)
