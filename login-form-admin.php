@@ -14,7 +14,7 @@
                     <form name="form1" onsubmit="checkForm() ;return false;">
                         <div class="mb-3">
                             <label for="account" class="form-label">帳號</label>
-                            <input type="text" class="form-control" id="email" name="account">
+                            <input type="text" class="form-control" id="account" name="account">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">密碼</label>

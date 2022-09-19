@@ -47,8 +47,6 @@ try {
         $_POST['src'],
         $_POST['pay'],
         $_POST['side']
-        // $birthday,
-        // $_POST['address']
     ]);
 } catch (PDOException $ex) {
     $output['error'] = $ex->getMessage();
@@ -58,7 +56,7 @@ try {
 if ($stmt->rowCount()) {
     $output['success'] = true;
 } else {
-    $output['error'] = '資料沒有新增';
+    $output['error'] = '參數不足';
 }
 
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
