@@ -10,28 +10,64 @@ $pageName = 'insert'
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">新增資料</h5>
+                <h5 class="card-title">新增店家資料</h5>
                 <form name="form1" onsubmit="checkForm(); return false;" novalidate>
                     <div class="mb-3">
-                        <label for="name" class="form-label">name</label>
+                        <label for="name" class="form-label">店名</label>
                         <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">email</label>
-                        <input type="email" class="form-control" id="email" name="email" >
+                        <label for="account" class="form-label">帳號</label>
+                        <input type="text" class="form-control" id="account" name="account">
                     </div>
                     <div class="mb-3">
-                        <label for="mobile" class="form-label">mobile</label>
-                        <input type="text" class="form-control" id="mobile" name="mobile" 
-                        pattern="09\d{2}-?\d{3}-?\d{3}">
+                        <label for="password" class="form-label">密碼</label>
+                        <input type="text" class="form-control" id="password" name="password">
                     </div>
                     <div class="mb-3">
-                        <label for="birthday" class="form-label">birthday</label>
-                        <input type="text" class="form-control" id="birthday" name="birthday" >
-                    </div>
-                    <div class="mb-3">
-                        <label for="address" class="form-label">address</label>
+                        <label for="address" class="form-label">地址</label>
                         <textarea class="form-control" name="address" id="address" cols="50" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">電話</label>
+                        <input type="text" class="form-control" id="phone" name="phone" 
+                        pattern="/\d{10}/">
+                    </div>
+                    <div class="mb-3">
+                        <label for="food_type_sid" class="form-label">種類</label>
+                        <input type="text" class="form-control" id="food_type_sid" name="food_type_sid">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bus_day" class="form-label">營業時間(週)</label>
+                        <input type="text" class="form-control" id="bus_day" name="bus_day">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bus_start" class="form-label">開始營業時間</label>
+                        <input type="text" class="form-control" id="bus_start" name="bus_start">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bus_end" class="form-label">結束營業時間</label>
+                        <input type="text" class="form-control" id="bus_end" name="bus_end">
+                    </div>
+                    <div class="mb-3">
+                        <label for="rest_right" class="form-label">上架狀態(店家)</label>
+                        <input type="text" class="form-control" id="rest_right" name="rest_right">
+                    </div>
+                    <div class="mb-3">
+                        <label for="plat_right" class="form-label">上架狀態(平台)</label>
+                        <input type="text" class="form-control" id="plat_right" name="plat_right">
+                    </div>
+                    <div class="mb-3">
+                        <label for="src" class="form-label">圖檔路徑</label>
+                        <input type="text" class="form-control" id="src" name="src">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pay" class="form-label">接受付款方式</label>
+                        <input type="text" class="form-control" id="pay" name="pay">
+                    </div>
+                    <div class="mb-3">
+                        <label for="side" class="form-label">外帶/外送/內用選擇</label>
+                        <input type="text" class="form-control" id="side" name="side">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

@@ -20,24 +20,35 @@ if (empty($_POST['name'])) {
 
 // TODO: 檢查欄位資料
 
-$sql = "INSERT INTO `address_book`(
-    `name`,`email`,`mobile`,`birthday`,`address`,`created_at`
-    )  VALUES(?,?,?,?,?,NOW())";
+$sql = "INSERT INTO `shop`(
+    `name`,`account`,`password`,`address`,`phone`,`food_type_sid`,`bus_day`,`bus_start`,`bus_End`,`rest_right`,`plat_right`,`src`,`pay`,`side`,`created_at`
+    )  VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())";
 
 $stmt = $pdo->prepare($sql);
 
-$birthday = null;
-if (strtotime($_POST['birthday']) !== false) {
-    $birthday = $_POST['birthday'];
-}
+// $birthday = null;
+// if (strtotime($_POST['birthday']) !== false) {
+//     $birthday = $_POST['birthday'];
+// }
 
 try {
     $stmt->execute([
         $_POST['name'],
-        $_POST['email'],
-        $_POST['mobile'],
-        $birthday,
-        $_POST['address']
+        $_POST['account'],
+        $_POST['password'],
+        $_POST['address'],
+        $_POST['phone'],
+        $_POST['food_type_sid'],
+        $_POST['bus_day'],
+        $_POST['bus_start'],
+        $_POST['bus_end'],
+        $_POST['rest_right'],
+        $_POST['plat_right'],
+        $_POST['src'],
+        $_POST['pay'],
+        $_POST['side']
+        // $birthday,
+        // $_POST['address']
     ]);
 } catch (PDOException $ex) {
     $output['error'] = $ex->getMessage();

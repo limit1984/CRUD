@@ -20,29 +20,47 @@ if (empty($_POST['name'])) {
 
 // TODO: 檢查欄位資料
 
-$sql = "UPDATE `address_book` SET 
+$sql = "UPDATE `shop` SET 
 `name`=?,
-`email`=?,
-`mobile`=?,
-`birthday`=?,
-`address`=? 
+`account`=?,
+`password`=?,
+`address`=?,
+`phone`=?,
+`food_type_sid`=?,
+`bus_day`=?,
+`bus_start`=?,
+`bus_end`=?,
+`rest_right`=?,
+`plat_right`=?,
+`src`=?,
+`pay`=?,
+`side`=? 
 WHERE sid=?";
 // WHERE前面不能加東西!
 
 $stmt = $pdo->prepare($sql);
 
-$birthday = null;
-if (strtotime($_POST['birthday']) !== false) {
-    $birthday = $_POST['birthday'];
-}
+// $birthday = null;
+// if (strtotime($_POST['birthday']) !== false) {
+//     $birthday = $_POST['birthday'];
+// }
 
 try {
     $stmt->execute([
         $_POST['name'],
-        $_POST['email'],
-        $_POST['mobile'],
-        $birthday,
+        $_POST['account'],
+        $_POST['password'],
         $_POST['address'],
+        $_POST['phone'],
+        $_POST['food_type_sid'],
+        $_POST['bus_day'],
+        $_POST['bus_start'],
+        $_POST['bus_end'],
+        $_POST['rest_right'],
+        $_POST['plat_right'],
+        $_POST['src'],
+        $_POST['pay'],
+        $_POST['side'],
         $_POST['sid']
     ]);
 } catch (PDOException $ex) {

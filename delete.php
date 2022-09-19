@@ -4,7 +4,7 @@ require __DIR__ . '/parts/connect_db.php';
 
 $sid = isset($_GET['sid']) ? intval($_GET['sid']) : 0;
 
-$sql = "DELETE FROM address_book WHERE sid={$sid}";
+$sql = "DELETE FROM shop WHERE sid={$sid}";
 
 $pdo->query($sql);
 
