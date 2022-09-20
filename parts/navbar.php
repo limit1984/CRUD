@@ -33,7 +33,7 @@ if (!isset($_SESSION)) {
                     </li>
                 </ul>
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <?php if (empty($_SESSION['admin'])) : ?>
+                    <?php if (empty($_SESSION['user'])) : ?>
                         <li class="nav-item">
                             <a class="nav-link <?= $pageName=='login' ? 'active' : ''  ?>" href="login-form-admin.php">登入</a>
                         </li>
@@ -43,7 +43,7 @@ if (!isset($_SESSION)) {
 
                     <?php else : ?>
                         <li class="nav-item">
-                            <a class="nav-link"><?= $_SESSION['admin']['account'] ?></a>
+                            <a class="nav-link"><?= $_SESSION['user']['nickname'] ?></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout-admin.php">登出</a>
