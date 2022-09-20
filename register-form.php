@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/parts/admin-required.php';
 require __DIR__ . '/parts/connect_db.php';
-$pageName = 'insert'
+$pageName = 'register'
 ?>
 <?php require __DIR__ . '/parts/html-head.php'; ?>
 <?php include __DIR__ . '/parts/navbar.php'; ?>
@@ -10,7 +10,7 @@ $pageName = 'insert'
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">新增店家資料</h5>
+                <h5 class="card-title">新店家註冊</h5>
                 <form name="form1" onsubmit="checkForm(); return false;" novalidate>
                     <div class="mb-3">
                         <label for="name" class="form-label">店名</label>
@@ -99,6 +99,7 @@ $pageName = 'insert'
                 location.href = 'list.php';
             }
         })
+
 
     }
 </script>
