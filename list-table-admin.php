@@ -4,6 +4,7 @@
             <thead>
                 <tr>
                     <th scope="col">
+                        <span>編號</span>
                         <i class="fa-solid fa-trash-can"></i>
                     </th>
                     <th scope="col">#</th>
@@ -22,6 +23,7 @@
                     <th scope="col">付款方式</th>
                     <th scope="col">送餐方式</th>
                     <th scope="col">
+                        <span>編輯</span>
                         <i class="fa-solid fa-pen-to-square"></i>
                     </th>
                 </tr>
@@ -31,6 +33,7 @@
                     <tr>
                         <td>
                             <a href="javascript: delete_it(<?= $r['sid'] ?>)">
+                                <span>刪</span>
                                 <i class="fa-solid fa-trash-can"></i>
                             </a>
                         </td>
@@ -51,6 +54,7 @@
                         <td><?= $r['side'] ?></td>
                         <td>
                             <a href="edit-form.php?sid=<?= $r['sid'] ?>">
+                                <span>改</span>
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                         </td>

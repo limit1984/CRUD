@@ -51,6 +51,7 @@ $output = [
                 <ul class="pagination">
                     <li class="page-item <?= 1 == $page ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=<?= $page - 1 ?>">
+                        <span>上一頁</span>
                             <i class="fa-solid fa-circle-left"></i>
                         </a>
                     </li>
@@ -67,6 +68,7 @@ $output = [
 
                     <li class="page-item <?= $totalPages == $page ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=<?= $page + 1 ?>">
+                        <span>下一頁</span>
                             <i class="fa-solid fa-circle-right"></i>
                         </a>
                     </li>

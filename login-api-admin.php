@@ -31,7 +31,8 @@ if (empty($check)) {
     echo json_encode($output, JSON_UNESCAPED_UNICODE);
     exit; // 結束程式
 }
-
+$checkAC = $check['account'];
+$inAC = $_POST['account'];
 $checkPW = $check['password'];
 $inPW = $_POST['password'];
 // 驗證密碼
@@ -48,15 +49,22 @@ $inPW = $_POST['password'];
 
 if($checkPW == $inPW){
     $output['success'] = true;
-    $_SESSION['user'] = [
-        'account' => $check['account'],
-        'nickname' => $check['name'],
-        'sid'=>$check['sid'],
-    ];
+    if($inAC =='admin@test.com'){
+        $_SESSION['admin'] = [
+            'account' => $check['account'],
+            'nickname' => $check['name'],
+            'sid'=>$check['sid'],
+        ];
+    }else{
+        $_SESSION['user'] = [
+            'account' => $check['account'],
+            'nickname' => $check['name'],
+            'sid'=>$check['sid'],
+        ];
+    }
     if(!isset($_SESSION['cartTotal'])){
         $_SESSION['cartTotal'] = 0;
     }
-
 }
 else {
     $output['error'] = '帳號或密碼錯誤';
