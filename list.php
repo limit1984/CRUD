@@ -23,12 +23,36 @@ if ($totalPages) {
         exit;
     }
 
-    $sql = sprintf(
-        "SELECT * FROM shop ORDER BY sid ASC LIMIT %s,%s",
-        ($page - 1) * $perPage,
-        $perPage
-    );
-    $rows = $pdo->query($sql)->fetchAll();
+    // $res = "SELECT * FROM shop WHERE `sid` = ? LIMIT 1";
+    
+    // $stmt = $pdo->prepare($res);
+
+    // $stmt->execute(
+    //     [$_SESSION['user']
+    // ]);
+    
+    // $check = $stmt->fetch();
+    
+
+    //IF 是管理者帳密的話顯示全部店家列表，一般店家帳密則只顯示自己
+    if (empty($_SESSION['admin'])) {
+        $sid = $_SESSION['user']['sid'];
+        $sql = sprintf(
+            "SELECT * FROM shop WHERE `sid`= %s ORDER BY sid ASC LIMIT %s,%s",
+            $sid,
+            ($page - 1) * $perPage,
+            $perPage
+        );
+        $rows = $pdo->query($sql)->fetchAll();
+    } else {
+        $sql = sprintf(
+            "SELECT * FROM shop ORDER BY sid ASC LIMIT %s,%s",
+            ($page - 1) * $perPage,
+            $perPage
+        );
+        $rows = $pdo->query($sql)->fetchAll();
+    }
+
 }
 
 
